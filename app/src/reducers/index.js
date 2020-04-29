@@ -1,7 +1,12 @@
+import {
+  FETCHING_DOGS_START,
+  FETCHING_DOGS_SUCCESS,
+  FETCHING_DOGS_FAILED,
+} from "../actions";
+
 const initialState = {
   message: null,
   status: false,
-  error: "",
 };
 
 export const reducer = (state = initialState, action) => {
@@ -18,7 +23,12 @@ export const reducer = (state = initialState, action) => {
         status: true,
       };
     case FETCHING_DOGS_FAILED:
-      return { ...state, status: false, error: "There was an error." };
+      return {
+        ...state,
+        message: null,
+        status: false,
+        error: "There was an error.",
+      };
     default:
       return state;
   }

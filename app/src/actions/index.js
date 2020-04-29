@@ -4,8 +4,6 @@ export const FETCHING_DOGS_START = "FETCHING_DOGS_START";
 export const FETCHING_DOGS_SUCCESS = "FETCHING_DOGS_SUCCESS";
 export const FETCHING_DOGS_FAILED = "FETCHING_DOGS_FAILED";
 
-// Fill in reducer types later
-
 export const getDogs = () => (dispatch) => {
   dispatch({ type: FETCHING_DOGS_START });
 

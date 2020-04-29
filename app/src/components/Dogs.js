@@ -1,12 +1,22 @@
 import React from "react";
 import { getDogs } from "../actions";
-// import {connect}
+import { connect } from "react-redux";
 
-const Dog = (getDogs) => {
+const Dog = (getDogs, pictures) => {
   return (
     <div>
-      <h2>I'm a Dog</h2>
+      <h2>Dog Pictures: {pictures}</h2>
+      <div>
+        <button onClick={getDogs}>Fetch</button>
+      </div>
     </div>
   );
 };
-export default Dog;
+
+const mapStatetoProps = (state) => {
+  return {
+    pictures: state.message,
+    status: state.status,
+  };
+};
+export default connect(mapStatetoProps, { getDogs })(Dog);
